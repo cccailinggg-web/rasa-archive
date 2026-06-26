@@ -690,10 +690,15 @@ dialog{
   }
 
   #questionText{
-    font-size:clamp(24px,7vw,36px) !important;
-    line-height:1.28 !important;
-    max-width:100%;
+    font-size:clamp(19px,5.2vw,28px) !important;
+    font-weight:400;
+    letter-spacing:.02em;
+    line-height:1.4;
+    max-width:88%;
+    margin:0 auto;
   }
+
+  
 
   .choices{
     grid-template-columns:1fr;
@@ -789,5 +794,59 @@ dialog{
   .inventory-fab svg{
     width:28px;
     height:28px;
+  }
+}
+/* 手機隱藏庫存按鈕、三欄選項改成一欄 */
+@media (max-width:768px){
+  .choices{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+    align-content:center;
+  }
+
+  .choice{
+    width:100%;
+    min-height:72px !important;
+    font-size:clamp(18px,5vw,24px) !important;
+    padding:16px 20px !important;
+    border-radius:24px;
+  }
+  .inventory-fab{
+    display:none !important;
+  }
+}
+/* ===== 結果頁卡牌：正面停留較久、5 秒轉一圈、持續漂浮 ===== */
+
+.reveal-inner{
+  animation:
+    resultCardSpin 5s linear infinite,
+    resultCardFloat 3.2s ease-in-out infinite alternate !important;
+}
+
+.reveal-card.flipped .reveal-inner{
+  transform:rotateY(180deg);
+}
+
+@keyframes resultCardSpin{
+  0%{
+    transform:rotateY(180deg) translateY(0);
+  }
+
+  82%{
+    transform:rotateY(180deg) translateY(-8px);
+  }
+
+  100%{
+    transform:rotateY(540deg) translateY(0);
+  }
+}
+
+@keyframes resultCardFloat{
+  from{
+    filter:drop-shadow(0 0 42px rgba(255,255,255,.16));
+  }
+
+  to{
+    filter:drop-shadow(0 0 72px rgba(255,255,255,.24));
   }
 }
