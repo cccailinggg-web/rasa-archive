@@ -819,7 +819,7 @@ dialog{
 
 .reveal-inner{
   animation:
-    resultCardSpin 5s linear infinite,
+    resultCardSpin 6.5s linear infinite,
     resultCardFloat 3.2s ease-in-out infinite alternate !important;
 }
 
@@ -832,7 +832,7 @@ dialog{
     transform:rotateY(180deg) translateY(0);
   }
 
-  82%{
+  90%{
     transform:rotateY(180deg) translateY(-8px);
   }
 
