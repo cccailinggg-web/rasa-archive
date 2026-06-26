@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>RASA Archive｜RASA ARCHIVE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mantou+Sans&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-orb orb-c"></div>
+    <div class="grain"></div>
+
+    <section class="stage screen active" id="homeScreen">
+      <button class="home-hit" id="homeStart" aria-label="開始抽卡">
+        <p class="archive-title">RASA ARCHIVE</p>
+        <img src="assets/back.png" class="home-card" alt="RASA card back">
+      </button>
+    </section>
+
+    <section class="stage screen" id="quizScreen">
+      <div class="quiz-wrap">
+        <p class="progress" id="progress">01 / 03</p>
+        <h1 id="questionText">Question</h1>
+        <div class="choices">
+          <button class="choice" id="choiceA"></button>
+          <button class="choice" id="choiceB"></button>
+          <button class="choice" id="choiceC"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage screen" id="drawScreen">
+      <p class="archive-title draw-title">RASA ARCHIVE</p>
+      <div class="card-field" id="cardField">
+        <div class="floating-card fc1"><img src="assets/back.png" alt="card back"></div>
+        <div class="floating-card fc2"><img src="assets/back.png" alt="card back"></div>
+        <div class="floating-card fc3"><img src="assets/back.png" alt="card back"></div>
+      </div>
+      <button class="primary draw-button" id="drawButton">抽出今晚推薦</button>
+    </section>
+
+    <section class="stage screen" id="resultScreen">
+      <div class="result-layout">
+        <div class="reveal-card" id="revealCard">
+          <div class="reveal-inner">
+            <img class="card-back" src="assets/back.png" alt="card back">
+            <img class="card-front" id="resultImage" src="assets/card01.png" alt="result card">
+          </div>
+        </div>
+        <div class="result-copy">
+          <p class="archive-title">RASA ARCHIVE</p>
+          <p class="result-label">今晚推薦</p>
+          <h2 id="resultName">花信初至</h2>
+          <p id="resultEdition">A Floral Edition</p>
+          <button class="primary again" id="againButton">Archive Again</button>
+        </div>
+      </div>
+    </section>
+
+    <button class="inventory-fab" id="inventoryButton" aria-label="庫存管理">
+      <svg viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M12 10 L22 30 L32 10" />
+        <path d="M22 30 L22 36" />
+        <path d="M15 36 L29 36" />
+      </svg>
+    </button>
+
+    <dialog id="inventoryDialog">
+      <form method="dialog" class="inventory-panel">
+        <h3>庫存</h3>
+        <p>花信初至：<span id="stockFlower">25</span></p>
+        <p>金風果語：<span id="stockSun">25</span></p>
+        <p>暮山焙韻：<span id="stockNight">25</span></p>
+        <div class="dialog-actions">
+          <button value="cancel">關閉</button>
+          <button type="button" id="resetStock">重置</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
