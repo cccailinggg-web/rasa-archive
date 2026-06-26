@@ -690,11 +690,11 @@ dialog{
   }
 
   #questionText{
-    font-size:clamp(19px,5.2vw,28px) !important;
+    font-size:clamp(18px,5.1vw,26px) !important;
     font-weight:400;
     letter-spacing:.02em;
     line-height:1.4;
-    max-width:88%;
+    max-width:82%;
     margin:0 auto;
   }
 
@@ -815,11 +815,11 @@ dialog{
     display:none !important;
   }
 }
-/* ===== 結果頁卡牌：正面停留較久、偶爾轉一圈 ===== */
+/* ===== 結果頁卡牌：正面停留較久、5 秒轉一圈、持續漂浮 ===== */
 
 .reveal-inner{
   animation:
-    resultCardSpin 6.5s linear infinite,
+    resultCardSpin 5s linear infinite,
     resultCardFloat 3.2s ease-in-out infinite alternate !important;
 }
 
@@ -829,15 +829,15 @@ dialog{
 
 @keyframes resultCardSpin{
   0%{
-    transform:rotateY(0deg);
+    transform:rotateY(180deg) translateY(0);
   }
 
-  90%{
-    transform:rotateY(0deg);
+  70%{
+    transform:rotateY(180deg) translateY(-8px);
   }
 
   100%{
-    transform:rotateY(360deg);
+    transform:rotateY(540deg) translateY(0);
   }
 }
 
