@@ -815,3 +815,41 @@ dialog{
     display:none !important;
   }
 }
+/* ===== 修正結果頁卡牌：避免鏡像背面 / 翻牌失效 ===== */
+
+.reveal-inner{
+  animation:none !important;
+  transform:rotateY(0deg);
+  transition:transform 1s cubic-bezier(.2,.9,.2,1) !important;
+}
+
+.reveal-card.flipped .reveal-inner{
+  transform:rotateY(180deg) !important;
+}
+
+.reveal-card.flipped{
+  animation:resultCardFloatOnly 3.2s ease-in-out infinite alternate !important;
+}
+
+.card-back,
+.card-front{
+  backface-visibility:hidden !important;
+  -webkit-backface-visibility:hidden !important;
+}
+
+.card-back{
+  transform:rotateY(0deg) !important;
+}
+
+.card-front{
+  transform:rotateY(180deg) !important;
+}
+
+@keyframes resultCardFloatOnly{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-10px);
+  }
+}
