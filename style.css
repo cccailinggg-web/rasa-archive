@@ -853,19 +853,21 @@ dialog{
     transform:translateY(-10px);
   }
 }
-/* ===== 手機結果頁：固定正面，只保留漂浮，不旋轉背面 ===== */
+/* ===== 手機結果頁：翻一次牌後，固定正面漂浮 ===== */
 @media (max-width:768px){
 
+  /* 保留翻牌動畫 */
   .reveal-inner{
-    animation:none !important;
-    transform:rotateY(0deg) !important;
-    transition:none !important;
+    transition:transform 1s cubic-bezier(.2,.9,.2,1) !important;
+    transform-style:preserve-3d;
   }
 
+  /* 點擊抽牌後，翻到正面 */
   .reveal-card.flipped .reveal-inner{
     transform:rotateY(180deg) !important;
   }
 
+  /* 翻牌完成後，整張卡只上下漂浮 */
   .reveal-card.flipped{
     animation:mobileResultFloatOnly 3.2s ease-in-out infinite alternate !important;
   }
@@ -877,11 +879,11 @@ dialog{
   }
 
   .card-back{
-    transform:rotateY(0deg) !important;
+    transform:rotateY(0deg);
   }
 
   .card-front{
-    transform:rotateY(180deg) !important;
+    transform:rotateY(180deg);
   }
 
   @keyframes mobileResultFloatOnly{
@@ -892,4 +894,7 @@ dialog{
       transform:translateY(-10px);
     }
   }
+}
+#questionText{
+  white-space:pre-line !important;
 }
