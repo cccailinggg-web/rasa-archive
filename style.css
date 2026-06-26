@@ -853,3 +853,43 @@ dialog{
     transform:translateY(-10px);
   }
 }
+/* ===== 手機結果頁：固定正面，只保留漂浮，不旋轉背面 ===== */
+@media (max-width:768px){
+
+  .reveal-inner{
+    animation:none !important;
+    transform:rotateY(0deg) !important;
+    transition:none !important;
+  }
+
+  .reveal-card.flipped .reveal-inner{
+    transform:rotateY(180deg) !important;
+  }
+
+  .reveal-card.flipped{
+    animation:mobileResultFloatOnly 3.2s ease-in-out infinite alternate !important;
+  }
+
+  .card-back,
+  .card-front{
+    backface-visibility:hidden !important;
+    -webkit-backface-visibility:hidden !important;
+  }
+
+  .card-back{
+    transform:rotateY(0deg) !important;
+  }
+
+  .card-front{
+    transform:rotateY(180deg) !important;
+  }
+
+  @keyframes mobileResultFloatOnly{
+    from{
+      transform:translateY(0);
+    }
+    to{
+      transform:translateY(-10px);
+    }
+  }
+}
