@@ -579,3 +579,60 @@ dialog{
     width:min(42vw,30vh);
   }
 }
+/* ===== GitHub Pages 字體縮小修正版：請貼在 style.css 最底部 ===== */
+
+.archive-title{
+  font-size:clamp(18px,2vw,32px) !important;
+  letter-spacing:.18em !important;
+}
+
+.home-hit .archive-title{
+  font-size:clamp(20px,2.1vw,34px) !important;
+}
+
+.progress{
+  font-size:clamp(13px,1vw,18px) !important;
+}
+
+#questionText{
+  font-size:clamp(26px,3.4vw,52px) !important;
+  line-height:1.22 !important;
+}
+
+.choice{
+  font-size:clamp(17px,1.45vw,26px) !important;
+  min-height:clamp(86px,12vh,132px) !important;
+  padding:clamp(14px,1.6vw,26px) !important;
+}
+
+.primary{
+  font-size:clamp(15px,1.1vw,21px) !important;
+  padding:14px 28px !important;
+}
+
+.draw-title .archive-title{
+  font-size:clamp(18px,1.8vw,30px) !important;
+}
+
+.result-copy .archive-title{
+  font-size:clamp(14px,1.15vw,21px) !important;
+  letter-spacing:.32em !important;
+  margin-bottom:10px !important;
+}
+
+.result-label{
+  font-size:clamp(14px,1.15vw,21px) !important;
+  margin:2vh 0 .8vh !important;
+}
+
+.result-copy h2{
+  font-size:clamp(40px,5vw,78px) !important;
+}
+
+.result-copy p{
+  font-size:clamp(16px,1.4vw,24px) !important;
+}
+
+.inventory-panel p{
+  font-size:16px !important;
+}
