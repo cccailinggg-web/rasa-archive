@@ -3,7 +3,7 @@
 .site-logo{
   position:fixed;
   z-index:50;
-  top:max(30px, env(safe-area-inset-top));
+  top:max(36px, env(safe-area-inset-top));
   left:50%;
   width:clamp(112px, 10vw, 172px);
   height:auto;
