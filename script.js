@@ -3,7 +3,7 @@ const CARDS={apple:{name:'青蘋序曲',edition:'Overture',img:'assets/card01.pn
 const QUESTIONS=[
 {q:'今晚，你想讓哪種風味\n成為你的第一杯？',affectsResult:true,options:[{text:'經典麥香配上清甜蘋果',score:{apple:3,mist:0}},{text:'輕盈茶湯配上甜蜜花香',score:{apple:0,mist:3}},{text:'刺激氣泡搭配酸甜醋飲',score:{apple:2,mist:1}}]},
 {q:'你期待這款飲品的口感如何？',affectsResult:true,options:[{text:'細膩有層次、刺激氣泡感',score:{apple:3,mist:0}},{text:'茶韻悠長，慢慢回甘',score:{apple:0,mist:3}},{text:'酸甜青檸，輕盈延續',score:{apple:1,mist:2}}]},
-{q:'如果這杯酒是一首歌，\n那這首歌是什麼類型可以打動你？',archiveKey:'song',options:[{text:'前奏剛下就浮現記憶的經典排行'},{text:'副歌旋律無懈、朗朗上口流行金曲'},{text:'歌詞直擊人心、主歌餘音繞樑的不敗神作'}]},
+{q:'如果這杯酒是一首歌，\n那這首歌是什麼類型可以打動你？',archiveKey:'song',options:[{text:'前奏剛下\n就浮現記憶的經典排行'},{text:'副歌旋律無懈、\n朗朗上口流行金曲'},{text:'歌詞直擊人心、\n主歌餘音繞樑的不敗神作'}]},
 {q:'在今晚的相遇中，\n你期待能為哪些時刻舉杯？',archiveKey:'toast',options:[{text:'與新的邂逅相遇時'},{text:'感受到餐點驚人美味而痛哭流涕時'},{text:'聽到熟悉的旋律、準備忘我嘶吼時'}]},
 {q:'我最後問一句，你今晚想喝酒嗎？\n如果不喝，我將無條件推薦你適合的飲品！',alcoholQuestion:true,options:[{text:'想，我今天要喝到爛醉',alcohol:true},{text:'想，今晚來點微醺',alcohol:true},{text:'今天想喝無酒精',alcohol:false}]}
 ];
