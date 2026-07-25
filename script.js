@@ -1,11 +1,11 @@
 
-const CARDS={apple:{name:'青蘋序曲',edition:'Overture',img:'assets/card01.png',description:'序幕揭開，清爽、明亮的前奏，讓人期待今晚的首度相遇。'},mist:{name:'初霧歌行',edition:'Ballad',img:'assets/card02.png',description:'像茶香與歌聲交織，輕柔、悠長，讓每次的相遇都有了回音。'},plum:{name:'梅韻晚吟',edition:'Finale',img:'assets/card03.png',description:'像夜空中盛放的煙火，在熱烈、鮮明的掌聲中戛然落下了帷幕。'}};
+const CARDS={apple:{name:'青蘋序曲',edition:'Overture',img:'assets/card01.png',description:'序幕揭開，清爽、明亮的前奏，讓人期待今晚的首度相遇。'},mist:{name:'初霧歌行',edition:'Ballad',img:'assets/card02.png',description:'像茶香與歌聲交織，輕柔、悠長，讓每次的相遇都有了回音。'},plum:{name:'梅韻晚吟',edition:'Finale',img:'assets/card03.png',description:'像夜空中盛放的煙火，在熱烈掌聲中閃耀；在光芒漸歇時低鳴。'}};
 const QUESTIONS=[
 {q:'今晚，你想讓哪一種風味\n成為你的第一杯？',affectsResult:true,options:[{text:'經典麥香配上清甜蘋果',score:{apple:3,mist:0}},{text:'輕盈茶湯配上甜蜜花香',score:{apple:0,mist:3}},{text:'刺激氣泡搭配酸甜醋飲',score:{apple:2,mist:1}}]},
-{q:'你更期待哪一種尾韻？',affectsResult:true,options:[{text:'清爽明亮，俐落收尾',score:{apple:3,mist:0}},{text:'茶香悠長，慢慢回甘',score:{apple:0,mist:3}},{text:'青檸酸甜，輕盈延續',score:{apple:1,mist:2}}]},
-{q:'如果這杯酒是一首歌，\n你希望它是？',archiveKey:'song',options:[{text:'一聽就記住旋律的前奏'},{text:'越聽越耐人尋味的副歌'},{text:'直到散場仍留在腦海的尾聲'}]},
-{q:'今晚，你打算為哪些時刻舉杯？',archiveKey:'toast',options:[{text:'今晚的第一次相遇'},{text:'一段聊到忘了時間的對話'},{text:'一個值得記住的夜晚'}]},
-{q:'今晚，你想喝酒嗎？',alcoholQuestion:true,options:[{text:'想，今晚來點微醺',alcohol:true},{text:'今天想喝無酒精',alcohol:false}]}
+{q:'你期待這款飲品的口感如何？',affectsResult:true,options:[{text:'細膩有層次、刺激氣泡感',score:{apple:3,mist:0}},{text:'茶韻悠長，慢慢回甘',score:{apple:0,mist:3}},{text:'酸甜青檸，輕盈延續',score:{apple:1,mist:2}}]},
+{q:'如果這杯酒是一首歌，\n你希望它有什麼特點？',archiveKey:'song',options:[{text:'音樂剛下就浮現記憶的經典前奏'},{text:'旋律無懈、朗朗上口的副歌'},{text:'歌詞直擊人心、餘音繞樑的主歌'}]},
+{q:'在今晚的相遇中，\n你期待能為哪些時刻舉杯？',archiveKey:'toast',options:[{text:'與新的邂逅初識、既期待又怕受傷害的那刻'},{text:'感受到餐點驚人美味而痛哭流涕的那刻'},{text:'聽到熟悉的旋律、準備忘我嘶吼的那刻'}]},
+{q:'今晚，你想喝酒嗎？如果不喝，我將無條件推薦你適合的飲品！',alcoholQuestion:true,options:[{text:'想，我今天要喝到爛醉',alcohol:true},{text:'想，今晚來點微醺',alcohol:true},{text:'今天想喝無酒精',alcohol:false}]}
 ];
 const DEFAULT_INVENTORY={apple:{planned:17,issued:0},mist:{planned:17,issued:0},plum:{planned:17,issued:0}};const STORAGE_KEY='rasaArchiveInventoryV3';const $=id=>document.getElementById(id);const screens=['homeScreen','quizScreen','drawScreen','resultScreen'];let step=0,scores={apple:0,mist:0},archiveAnswers={song:'',toast:''},alcoholChoice=null,ranking=['apple','mist'];
 function show(id){screens.forEach(s=>$(s).classList.toggle('active',s===id))}function cloneDefault(){return JSON.parse(JSON.stringify(DEFAULT_INVENTORY))}function getInventory(){try{const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)),inv=cloneDefault();Object.keys(inv).forEach(k=>{if(saved&&saved[k]){inv[k].planned=Math.max(0,Number(saved[k].planned??17));inv[k].issued=Math.min(inv[k].planned,Math.max(0,Number(saved[k].issued??0)))}});return inv}catch(e){return cloneDefault()}}function setInventory(inv){localStorage.setItem(STORAGE_KEY,JSON.stringify(inv));renderInventory()}function remainingOf(i){return Math.max(0,i.planned-i.issued)}
