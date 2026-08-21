@@ -252,23 +252,23 @@ const QUESTIONS = [
 
 /* =========================================================
    庫存設定
-   每款 30 杯
+   每款 25 杯
 ========================================================= */
 
 const DEFAULT_INVENTORY = {
 
   moon:{
-    planned:30,
+    planned:25,
     issued:0
   },
 
   stay:{
-    planned:30,
+    planned:25,
     issued:0
   },
 
   september:{
-    planned:30,
+    planned:25,
     issued:0
   }
 
@@ -280,7 +280,7 @@ const DEFAULT_INVENTORY = {
   避免讀到上一場活動留下的 17 杯庫存資料。
 */
 
-const STORAGE_KEY = 'rasaArchiveInventoryPeachClubV1';
+const STORAGE_KEY = 'rasaArchiveInventoryPeachClubV2';
 
 
 /* =========================================================
@@ -363,7 +363,7 @@ function getInventory(){
 
         inv[k].planned = Math.max(
           0,
-          Number(saved[k].planned ?? 30)
+          Number(saved[k].planned ?? 25)
         );
 
         inv[k].issued = Math.min(
@@ -959,7 +959,7 @@ $('againButton')
 ========================================================= */
 
 $('resetStock').textContent =
-  '重設為每款 30 杯';
+  '重設為每款 25 杯';
 
 
 $('resetStock')
@@ -969,7 +969,7 @@ $('resetStock')
 
       if(
         confirm(
-          '確定重設為每款 30 杯、已發放 0 杯嗎？'
+          '確定重設為每款 25 杯、已發放 0 杯嗎？'
         )
       ){
 
