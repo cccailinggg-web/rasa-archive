@@ -104,7 +104,7 @@ const QUESTIONS = [
     options:[
 
       {
-        text:'喜歡，就讓他知道',
+        text:'明確表白',
         score:{
           moon:1,
           stay:0,
@@ -113,7 +113,7 @@ const QUESTIONS = [
       },
 
       {
-        text:'喜歡，要欲擒故縱',
+        text:'欲擒故縱',
         score:{
           moon:0,
           stay:1,
@@ -122,7 +122,7 @@ const QUESTIONS = [
       },
 
       {
-        text:'喜歡，會珍藏於心',
+        text:'珍藏於心',
         score:{
           moon:0,
           stay:0,
@@ -233,15 +233,15 @@ const QUESTIONS = [
     options:[
 
       {
-        text:'為不期而遇的怦然心動'
+        text:'不期而遇的怦然心動'
       },
 
       {
-        text:'為恰逢其時的彼此靠近'
+        text:'恰逢其時的彼此靠近'
       },
 
       {
-        text:'為一觸即然的眼神交會'
+        text:'一觸即然的眼神交會'
       }
 
     ]
